@@ -80,15 +80,16 @@ fuzzy-watering-system/
 
 The system operates in 4 main stages:
 
-1. **Initialization**: Define input variables (temperature, moisture, light) and output (water)
-2. **Membership Functions**: Define fuzzy sets using Gaussian and triangular functions
-3. **Rule Base**: 27 rules that map input combinations to watering levels
-4. **Defuzzification**: Calculate crisp watering output using centroid method
+1. Initialization**: Define input variables (temperature, moisture, light) and output (water)
+2. embership Functions**: Define fuzzy sets using Gaussian and triangular functions
+3. Rule Base**: 27 rules that map input combinations to watering levels
+4. Defuzzification**: Calculate crisp watering output using centroid method
 
 ## License
 
 This project is open source. Feel free to use and modify as needed.
 
 ## Author
+-SONAL KUMAR 
 
 Created for fuzzy logic demonstration and automated plant watering system design.
