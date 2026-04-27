@@ -2,6 +2,9 @@
 
 A Python-based fuzzy logic system for automatic plant watering based on temperature, soil moisture, and light conditions.
 
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![License](https://img.shields.io/badge/License-Open%20Source-green.svg)
+
 ## Overview
 
 This project implements a fuzzy logic control system that determines optimal watering levels for plants by analyzing three environmental inputs:
@@ -29,18 +32,15 @@ The system uses 27 fuzzy logic rules to calculate the optimal watering output (0
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/YOUR-USERNAME/fuzzy-watering-system.git
-cd fuzzy-watering-system
-```
-
-2. Install dependencies:
-```bash
-pip install numpy scikit-fuzzy matplotlib
+Clone the repository:
+   ```bash
+   git clone https://github.com/sonalkr31/-3-5-smart-greenhouse-fuzzy-logic-.git
+   cd -3-5-smart-greenhouse-fuzzy-logic-
 ```
 
 ## Usage
+Install the required dependencies:-
+pip install -r requirements.txt
 
 Run the script to execute all test cases and display graphs:
 
@@ -80,10 +80,17 @@ fuzzy-watering-system/
 
 The system operates in 4 main stages:
 
-1. Initialization**: Define input variables (temperature, moisture, light) and output (water)
-2. embership Functions**: Define fuzzy sets using Gaussian and triangular functions
-3. Rule Base**: 27 rules that map input combinations to watering levels
-4. Defuzzification**: Calculate crisp watering output using centroid method
+1. Initialization**: Define input variables (temperature, moisture, light) and output (water).
+2. Membership Functions**: Define fuzzy sets using Gaussian and triangular functions.
+3. Rule Base**: 27 rules that map input combinations to watering levels.
+4. Defuzzification**: Calculate crisp watering output using the centroid method.
+
+
+## System Output
+!Terminal Output   with  Membership Functions .
+<img width="468" height="316" alt="image" src="https://github.com/user-attachments/assets/056d58a5-c491-4dfb-8064-c730b4b05866" />
+
+Mathematical Comparative Analysis:** Automatically compares and calculates the percentage difference between Gaussian and Triangular membership outputs.
 
 ## License
 
