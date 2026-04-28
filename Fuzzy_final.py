@@ -117,7 +117,7 @@ for i, case in enumerate(test_cases, 1):
 # 6. VISUALIZATION  generating for graphs in new windoww 
 # ==========================================
 print("\nGenerating graphs... Please check the new windows that open.")
-print("(for github users , who is using sonal kumar greenhouse fuzzy logic, remeber to check the new window automatically open your pc or mac and save by screnshot or by save button ,otherwise you have to run the program once again to launch the graph)")
+print("(for github users , who is using sonal kumar greenhouse fuzzy logic, remember to check the new window automatically open your pc or mac and save by screnshot or by save button ,otherwise you have to run the program once again to launch the graph)")
 temperature.view()
 moisture.view()
 light.view()
@@ -192,7 +192,7 @@ watering_sim_tri = ctrl.ControlSystemSimulation(watering_ctrl_tri)
 print(f"{'Input Data (T, M, L)':<25} | {'Gaussian (Original)':<20} | {'Triangular (Test)':<20} | {'Difference'}")
 print("-" * 90)
 
-# Loop through all 10 test cases for the final table 
+# Loop all 10 test cases for the final table 
 for c in test_cases:
     watering_sim_tri.input['t_tri'] = c['T']
     watering_sim_tri.input['m_tri'] = c['M']
@@ -207,5 +207,5 @@ for c in test_cases:
 
 print("=" * 90)
 
-# Keep the windows open so you can take screenshots
+# This will help you to show the graph and please Keep the windows open so you can take screenshots
 plt.show()
