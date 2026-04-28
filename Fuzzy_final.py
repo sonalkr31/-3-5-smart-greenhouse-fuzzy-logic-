@@ -1,3 +1,4 @@
+#for learning this skfuzzy you can look at this link https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.control.html and  this https://pythonhosted.org/scikit-fuzzy/auto_examples/plot_tipping_problem.html . NOW ENJOY THE PROGRAM THANK YOU, PLEASE GIVE STARS IF YOU LIKED IT
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
@@ -12,7 +13,7 @@ light = ctrl.Antecedent(np.arange(0, 101, 1), 'light')  # 0-100%
 water = ctrl.Consequent(np.arange(0, 101, 1), 'water', defuzzify_method='centroid')
 
 # ==========================================
-# 2. MEMBERSHIP FUNCTIONS
+# 2. MEMBERSHIP FUNCTIONS for comparison 
 # ==========================================
 # Temperature (Gaussian)
 temperature['cold'] = fuzz.gaussmf(temperature.universe, 10, 6)
@@ -36,10 +37,10 @@ water['medium'] = fuzz.trimf(water.universe, [40, 60, 80])
 water['high'] = fuzz.trimf(water.universe, [70, 100, 100])
 
 # ==========================================
-# 3. RULE BASE (27 Rules)
+# 3. RULE BASE (27 Rules)  , logics like if else and then .
 # ==========================================
 rules = [
-    # Cold
+    # Cold 
     ctrl.Rule(temperature['cold'] & moisture['wet'] & light['dark'], water['off']),         
     ctrl.Rule(temperature['cold'] & moisture['wet'] & light['dim'], water['off']),
     ctrl.Rule(temperature['cold'] & moisture['wet'] & light['bright'], water['off']),
@@ -74,13 +75,13 @@ rules = [
 ]
 
 # ==========================================
-# 4. CONTROL SYSTEM
+# 4. CONTROL SYSTEM for motor to run 
 # ==========================================
 watering_ctrl = ctrl.ControlSystem(rules)
 watering_sim = ctrl.ControlSystemSimulation(watering_ctrl)
 
 # ==========================================
-# 5. AUTOMATED TESTING
+# 5. AUTOMATED TESTING  for T,M, L
 # ==========================================
 test_cases = [
     {"T": 38, "M": 10, "L": 95, "desc": "Max Stress"},
@@ -99,7 +100,7 @@ print("\n" + "=" * 80)
 print(f"{'No.':<3} | {'T(°C)':<6} | {'M(%)':<5} | {'L(%)':<5} | {'Output':<8} | {'Description'}")
 print("=" * 80)
 
-# Run the Gaussian simulation and save the results dynamically
+# Gaussian simulation case
 for i, case in enumerate(test_cases, 1):
     watering_sim.input['temperature'] = case['T']
     watering_sim.input['moisture'] = case['M']
@@ -113,17 +114,17 @@ for i, case in enumerate(test_cases, 1):
     print(f"{i:<3} | {case['T']:<6} | {case['M']:<5} | {case['L']:<5} | {output_val:>6.2f}%   | {case['desc']}")
 
 # ==========================================
-# 6. VISUALIZATION
+# 6. VISUALIZATION  generating for graphs in new windoww 
 # ==========================================
 print("\nGenerating graphs... Please check the new windows that open.")
-print("(for report, take screenshots of these graphs to include in your documentation)")
+print("(for github users , who is using sonal kumar greenhouse fuzzy logic, remeber to check the new window automatically open your pc or mac and save by screnshot or by save button ,otherwise you have to run the program once again to launch the graph)")
 temperature.view()
 moisture.view()
 light.view()
 water.view(sim=watering_sim)
 
 # =====================================================================
-# 7.: COMPARISON WITH TRIANGULAR FUNCTIONS (ALL 10 CASES)
+# 7.: COMPARISON WITH TRIANGULAR FUNCTIONS (ALL 10 CASES) , It si my homework so i took all 10 cases to practice , you can take 5 ,6 as you want.
 # =====================================================================
 print("\n" + "=" * 90)
 print("COMPARATIVE ANALYSIS OF MEMBERSHIP FUNCTIONS (Original Gaussian vs. Triangular)")
@@ -191,7 +192,7 @@ watering_sim_tri = ctrl.ControlSystemSimulation(watering_ctrl_tri)
 print(f"{'Input Data (T, M, L)':<25} | {'Gaussian (Original)':<20} | {'Triangular (Test)':<20} | {'Difference'}")
 print("-" * 90)
 
-# Loop through all 10 test cases for the final table
+# Loop through all 10 test cases for the final table 
 for c in test_cases:
     watering_sim_tri.input['t_tri'] = c['T']
     watering_sim_tri.input['m_tri'] = c['M']
